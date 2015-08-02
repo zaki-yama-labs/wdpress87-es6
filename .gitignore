@@ -3,4 +3,4 @@
 *.bak
 
 node_modules
-dst
+dest
