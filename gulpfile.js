@@ -1,19 +1,25 @@
 var gulp = require('gulp');
-var browserify = require('browserify');
-var babelify = require('babelify');
-var source = require('vinyl-source-stream');
+var ts = require('gulp-typescript');
 
-gulp.task('babelify', function() {
-  browserify({ entries: './src/app.js', debug: true })
-    .transform(babelify)
-    .bundle()
-    .on("error", function (err) { console.log("Error : " + err.message); })
-    .pipe(source('app.js'))
-    .pipe(gulp.dest('./dst'))
+var config = {
+  ts: {
+    src: [
+      'src/**/*.ts'
+    ],
+    dest: 'dest',
+    options: {target: 'ES5', module: 'commonjs'}
+  }
+};
+
+gulp.task('compile', function() {
+  return gulp.src(config.ts.src)
+          .pipe(ts(config.ts.options))
+          .js
+          .pipe(gulp.dest(config.ts.dest));
 });
 
 gulp.task('watch', function() {
-  gulp.watch('src/*.js', ['babelify'])
+    gulp.watch(config.ts.src, ['compile']);
 });
 
-gulp.task('default', ['babelify', 'watch']);
+gulp.task('default', ['compile', 'watch']);
