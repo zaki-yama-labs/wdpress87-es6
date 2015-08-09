@@ -42,7 +42,7 @@ class Author extends Person {
   }
 
   // スタティックメソッドのオーバーライド
-  static create(name, book) {
+  static create(name: string, book: string) {
     return new Author(name, book);
   }
 }
