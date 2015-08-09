@@ -2,6 +2,7 @@
  * let と const によるブロックスコープ
  */
 
+// --- let
 function foo(condition: boolean) {
   let bar: number = 1;
   if (condition) {
@@ -30,4 +31,7 @@ for (let i = 0; i < 5; i++) {
   setTimeout(function() {console.log(i)}, i * 1000);
 }
 
-
+// --- const
+var foo2 = 1;
+console.log(1);
+foo2 = 100;
