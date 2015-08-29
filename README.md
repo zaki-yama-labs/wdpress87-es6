@@ -1,7 +1,7 @@
 ECMAScript 6 Sample
 ===================
 
-[WEB+DB PRESS vol.87](http://gihyo.jp/magazine/wdpress/archive/2015/vol87) の特集1
+[WEB+DB PRESS vol.87](http://gihyo.jp/magazine/wdpress/archive/2015/vol87) の特集1  
 「今すぐ活かす！ 最新JavaScript 進化した仕様ECMAScript 6をまるごと解説」を TypeScript で写経
 
 ### ES6 の主要機能
